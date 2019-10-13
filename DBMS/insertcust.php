@@ -6,9 +6,9 @@ $custnum=filter_input(INPUT_POST, 'no');
 if(!empty($custname)){
 if(!empty($custnum)){
 
-$conn=new mysql_connect("localhost","root","","restaurant");
+$conn=mysqli_connect("localhost","root","","restaurant");
 
-$sql="INSERT INTO customer (CNAME,CNUMBER) VALUES ('$custname','$custnum')";
+$sql="INSERT INTO customer (CNAME,CNUMBER) VALUES('$custname','$custnum')";
 
 if($conn->query($sql)){
 	echo "New record inserted";
