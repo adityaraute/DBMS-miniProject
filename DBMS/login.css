@@ -5,7 +5,7 @@
 }
 .login fieldset{
     height:30vh;
-    padding:5rem;
+    padding:4rem;
     border-color: midnightblue;
     background: #dfd8f7;
    box-shadow: #7575f1 0px 15px 15px;
@@ -16,12 +16,17 @@
 }
 .login fieldset *{
     margin:1rem;
+    
 }
+.login fieldset{
+    color:#1909af;
+}
+
 .login fieldset label{
     font-size:1.6rem;
     color: #1909af;
 }
-#username,#password{
+#username,#password, #name, #number{
     background: transparent;
     border-style: none;
     padding:5px;

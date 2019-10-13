@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> RESTAURANT MANAGEMENT </title>
 		<meta charset="UTF-8">
-		<link rel= stylesheet href="main.css">
+        <link rel= "stylesheet" href="main.css">
+        <link rel="stylesheet" href="login.css">
+        
 	</head>
 	<body>
 		<nav class= "navbar">
@@ -11,25 +13,30 @@
 				<h2>LOGO</h2>
 				<ul class="nav-ul">
 					<a href="page.html">Home</a>
-					
+			
 					<a href="#">Menu</a>
 					<a href ="#">Contact Us</a>
 				</ul>
 			</div>
 		</nav>
 		
-		<div class="container">
-			<section class=" hero ">
-				<h1>RESTAURANT MANAGEMENT SYSTEM</h1><br>
-				<p>Who are you?</p><br>
-				<ul class="hero-ul">
-					<a href="waiterlogin.html"><button>Waiter</button></a>
-					<a href="cashierlogin.html"><button>Cashier</button></a>
-					<a href="cheflogin.html"><button>Chef</button></a>
-				</ul>
-			</section>
+		<div class="container" style="min-height:100vh">
+			<section class=" login " style="margin:auto">
+				<form action="">
+                    <fieldset style="height:auto; width: 25vw; ">
+                        <legend>New Customer</legend>
+                        <label for="name"> Full Name </label><br>
+                        <input type="text"  id="name"><br>
 
-			<section class="sec2">
+                        <label>Contact Number</label><br>
+                        <input type="number" id="number"><br>
+                        <input type="submit" value="Submit" id="submit">
+                    </fieldset>
+                </form>
+				
+				
+            </section>
+            <section class="sec2" style="margin-top: 20vh;">
 				<h3>OUR SPECIALTIES</h3>
 				<ul class="img-ul">
 					<img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/11/9/0/LR0101_Pasta-Bolognese.jpg.rend.hgtvcom.826.620.suffix/1485537164104.jpeg" alt="dish1">
@@ -38,7 +45,8 @@
 					<img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/11/9/0/LR0101_Pasta-Bolognese.jpg.rend.hgtvcom.826.620.suffix/1485537164104.jpeg" alt="dish1">
 				</ul>
 
-			</section>		
+			</section>
+				
 		</div>
 		<div class="footer">
 				<h2>LOGO</h2>
