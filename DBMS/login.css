@@ -1,10 +1,10 @@
 .login{
     width: 25rem;
     margin:auto;
-    height: 20rem;
+    height: auto;
 }
 .login fieldset{
-    height:30vh;
+    height:34vh;
     padding:4rem;
     border-color: midnightblue;
     background: #dfd8f7;
