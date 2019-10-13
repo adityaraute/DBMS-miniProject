@@ -53,26 +53,27 @@ h2{
 }
 .hero h1{
     font-size: 8vh;
-    color: #006eff;    
-    text-shadow: #2197f8 2px 2px 2px;
+    color: #482ab3;    
+    text-shadow: #6d46f8 2px 2px 2px;
 }
 .hero p{
     margin: 3rem;
-    color: #006eff;
+    color: #6d46f8;
     font-size: 5vh;
 }
 button{
-    background: #2c95be;
+    background: #6d46d8;
     padding:0.8rem 3rem ;
     border: 2px solid gold !important;
     border-radius: 0.7rem;
     margin: 1.5rem;
     cursor: pointer;
     color: gold;
+    font-size:1.3rem;
 }
 button:hover{
     transform: translateY(1px);
-    box-shadow: #3381da 0px 5px 5px;
+    box-shadow: #3700ff 0px 5px 5px;
 }
 
 
