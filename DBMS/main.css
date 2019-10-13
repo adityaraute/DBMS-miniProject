@@ -43,7 +43,7 @@ h2{
 .container{
     min-height: 90vh;
     padding: 2rem;
-    background: #b29ff5;
+    background: #dfd8f7;
 }
 .hero{
     text-align: center;
@@ -53,31 +53,32 @@ h2{
 }
 .hero h1{
     font-size: 8vh;
-    color: gold;    
-    text-shadow: #fffb00 2px 2px 2px;
+    color: #006eff;    
+    text-shadow: #2197f8 2px 2px 2px;
 }
 .hero p{
     margin: 3rem;
-    color: yellow;
+    color: #006eff;
     font-size: 5vh;
 }
 button{
-    background: rgb(223, 248, 163);
-    padding:0.5rem 3rem ;
+    background: #2c95be;
+    padding:0.8rem 3rem ;
     border: 2px solid gold !important;
     border-radius: 0.7rem;
     margin: 1.5rem;
     cursor: pointer;
-    
+    color: gold;
 }
 button:hover{
-    flex-basis: 30vw;
+    transform: translateY(1px);
+    box-shadow: #3381da 0px 5px 5px;
 }
 
 
 .sec2{
     margin-top: 5rem;
-    color:#fffb00;
+    color:#006eff;
     text-align: center;
 }
 .img-ul{
