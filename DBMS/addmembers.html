@@ -22,27 +22,19 @@
 		
 		<div class="container" style="min-height:100vh">
 			<section class=" login " style="margin:auto">
-				<form action="">
+				<form method="post" action="insertmember.php">
                     <fieldset style="height:auto; width: 25vw; ">
                         <legend>Add Members</legend>
-                        <label for="name"> Full Name </label><br>
-                        <input type="text"  id="name"><br>
-
-                        <label >Gender</label> <br>
-                        <input type="radio" name="gender" value="male" > Male
-                        <input type="radio" name="gender" value="female"> Female
-                        <input type="radio" name="gender" value="other"> Other <br><br>
+                        <label for="name"> User Name </label><br>
+                        <input type="text"  id="name" name="name"><br>
                         
                         <label>Role</label> <br>
                         <input type="radio" name="role" value="waiter" > Waiter
                         <input type="radio" name="role" value="chef"> Chef
                         <input type="radio" name="role" value="cashier"> Cashier <br><br>
                         
-
-                        <label for="username">Set Username </label><br>
-                        <input type="text"  id="username"><br>
                         <label for="password">Set Password </label><br>
-                        <input type="password"  id="password"><br>
+                        <input type="password"  id="password" name="password"><br>
                         <input type="submit" value="Submit" id="submit">
                     </fieldset>
                 </form>
