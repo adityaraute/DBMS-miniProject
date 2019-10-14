@@ -20,24 +20,33 @@
 		<div class="container">
 			<table>
       <tr>
-        <th>Sr. No.</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Category</th>
+        <th>ID</th>
+        <th>CATEGORY</th>
+        <th>NAME</th>
+        <th>PRICE</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>Paneer Bhurji</td>
-        <td>200</td>
-        <td>Veg</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Masala Dosa</td>
-        <td>100</td>
-        <td>South Indian</td>
-      </tr>
+
+     
+       <?php
+
+      $conn= mysqli_connect("localhost","root","","restaurant");
       
+      $sql= "SELECT ID,CATEGORY,NAME,PRICE FROM items";
+      $result=$conn->query($sql);
+
+      if($result->num_rows>0){
+      while($row=$result-> fetch_assoc()){
+
+      echo "<tr><td>".$row["ID"]."</td><td>".$row["CATEGORY"]."</td><td>".$row["NAME"]."</td><td>".$row["PRICE"]."</td></tr>>";
+		}
+
+	echo "</table>";
+		}
+		$conn->close();
+		
+		?>
+      
+
       </table>
 		</div>
 		<div class="footer">
