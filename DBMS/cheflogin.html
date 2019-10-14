@@ -20,30 +20,32 @@
 		<div class="container">
 			<table>
       <tr>
-        <th>Order No.</th>
-        <th>Customer</th>
-        <th>Waiter</th>
-        <th>Item</th>
-	<th>Quantity</th>
-	<th>Total</th>
+        <th>OID</th>
+        <th>QUANTITY</th>
+        <th>TOTAL</th>
+        <th>CID</th>
+        <th>WID</th>
+        <th>ID</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>James</td>
-        <td>Sal</td>
-        <td>Bhurji</td>
-	<td>1</td>
-        <td>200</td>
-      </tr>
-      <tr>
-        <td>2</td>
-	<td>Joe</td>
-	<td>Brian</td>
-        <td>Masala Dosa</td>
-        <td>1</td>
-	<td>100</td>
-        
-      </tr>
+      
+      <?php
+
+      $conn= mysqli_connect("localhost","root","","restaurant");
+      
+      $sql= "SELECT ID,CATEGORY,NAME,PRICE FROM items";
+      $result=$conn->query($sql);
+
+      if($result->num_rows>0){
+      while($row=$result-> fetch_assoc()){
+
+      echo "<tr><td>".$row["ID"]."</td><td>".$row["CATEGORY"]."</td><td>".$row["NAME"]."</td><td>".$row["PRICE"]."</td></tr>>";
+		}
+
+	echo "</table>";
+		}
+		$conn->close();
+		
+		?>
       
       </table>
 		</div>
