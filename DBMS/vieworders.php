@@ -38,7 +38,7 @@
 				<ul class="nav-ul">
 					<a href="page.html">Home</a>
 					<a href="items.html">Menu</a>
-					
+					<a href="page.html">Logout</a>
 				</ul>
 			</div>
 		</nav>
