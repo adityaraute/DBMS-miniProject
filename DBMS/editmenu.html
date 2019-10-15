@@ -20,21 +20,29 @@
 			</div>
 		</nav>
 		
-		<div class="container">
-			<section class=" login ">
-				<form action="">
-                    <fieldset>
-                        <legend>Cashier Login</legend>
-                        <label for="username"> Username </label><br>
-                        <input type="text"  id="username"><br>
-                        <label for="password">Password </label><br>
-                        <input type="password"  id="password"><br>
+		<div class="container" style="min-height:100vh">
+			<section class=" login " style="margin:auto">
+				<form method="post" action=""> 
+                    <!-- Has to be added -->
+                    <fieldset style="height:auto; width: 25vw; ">
+                        <legend>Add Items</legend>
+
+                        <label for="title">Title </label><br>
+                        <input type="text"  id="title" name="title"><br>
+
+                        <label for = "number">Price</label><br>
+                        <input type="number" id="number" name="no"><br>
+
+                        <label for="category">Category </label><br>
+                        <input type="text"  id="category" name="category"><br>
+
                         <input type="submit" value="Submit" id="submit">
                     </fieldset>
                 </form>
 				
 				
-			</section>
+            </section>
+            
 				
 		</div>
 		<div class="footer">

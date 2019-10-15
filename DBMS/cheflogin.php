@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<title> RESTAURANT MANAGEMENT </title>
@@ -11,8 +11,8 @@
 				<h2>LOGO</h2>
 				<ul class="nav-ul">
 					<a href="page.html">Home</a>
-					<a href="items.html">Menu</a>
-					<a href ="#">Contact Us</a>
+					<a href="itemsnew.php">Menu</a>
+					
 				</ul>
 			</div>
 		</nav>

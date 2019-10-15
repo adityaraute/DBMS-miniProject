@@ -1,30 +1,32 @@
-<?php
 
-$custname=filter_input(INPUT_POST, 'n');
-$custnum=filter_input(INPUT_POST, 'no');
+		<?php
 
-if(!empty($custname)){
-if(!empty($custnum)){
+					$custname=filter_input(INPUT_POST, 'n');
+					$custnum=filter_input(INPUT_POST, 'no');
 
-$conn=mysqli_connect("localhost","root","","restaurant");
+					if(!empty($custname)){
+					if(!empty($custnum)){
 
-$sql="INSERT INTO customer (CNAME,CNUMBER) VALUES('$custname','$custnum')";
+					$conn=mysqli_connect("localhost","root","","restaurant");
 
-if($conn->query($sql)){
-	echo "New record inserted";
-}
-else{
-	echo "record not inserted";
-}
-$conn->close();
-}
+					$sql="INSERT INTO customer (CNAME,CNUMBER) VALUES('$custname','$custnum')";
 
-else{
-    echo "Customer number should not be empty ";
-    die();
-}}
-else{
-	echo "Customer name should not be empty";
-	die();
-}
-?>
+					if($conn->query($sql)){
+						echo "New record inserted";
+					}
+					else{
+						echo "record not inserted";
+					}
+					$conn->close();
+					}
+
+					else{
+						echo "Customer number should not be empty ";
+						die();
+					}}
+					else{
+						echo "Customer name should not be empty";
+						die();
+					}
+					?>
+	

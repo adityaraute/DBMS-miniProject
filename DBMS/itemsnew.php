@@ -1,9 +1,35 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<title> RESTAURANT MANAGEMENT </title>
 		<meta charset="UTF-8">
 		<link rel= stylesheet href="main.css">
+
+		<style>
+		table {
+			margin:auto;
+			margin-top: 5rem;
+			border-collapse: collapse;
+			width: 80%;
+			
+			}
+
+		table td, table th {
+			border: 1px solid  #482ab3;
+			padding: 1rem;
+			
+			}
+
+		
+		table th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #3700ff;
+			color: #fffb00;
+			}
+		</style>
+
 	</head>
 	<body>
 		<nav class= "navbar">
@@ -12,12 +38,13 @@
 				<ul class="nav-ul">
 					<a href="page.html">Home</a>
 					<a href="items.html">Menu</a>
-					<a href ="#">Contact Us</a>
+					
 				</ul>
 			</div>
 		</nav>
 		
 		<div class="container">
+			<center><h2>MENU</h2></CENTER>
 			<table>
       <tr>
         <th>ID</th>
