@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> RESTAURANT MANAGEMENT </title>
@@ -39,7 +39,7 @@
       if($result->num_rows>0){
       while($row=$result-> fetch_assoc()){
 
-      echo "<tr><td>".$row["ORDERID"]."</td><td>".$row["QUANTITY"]."</td><td>".$row["TOTAL"]."</td><td>".$row["NAME"]."</td><td>".$row["CID"]."</td><td>".$row["WID"]."</td><td>".$row["ID"]."</td></tr>>";
+      echo "<tr><td>".$row["ORDERID"]."</td><td>".$row["QUANTITY"]."</td><td>".$row["TOTAL"]."</td><td>".$row["NAME"]."</td><td>".$row["CID"]."</td><td>".$row["WID"]."</td><td>".$row["ID"]."</td></tr>";
 		}
 
 	echo "</table>";
