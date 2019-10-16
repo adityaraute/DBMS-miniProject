@@ -31,7 +31,7 @@
                     else{
                         echo '
                                      <script type ="text/javascript">
-                                     location="cashierAuth.html";
+                                     location="cashierlogin.html";
                                     alert("Fields should not be empty");
                                  </script>';
 
