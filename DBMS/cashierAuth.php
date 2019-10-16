@@ -22,7 +22,7 @@
                             else{
                                 echo '
                                      <script type ="text/javascript">
-                                     location="cashier.html";
+                                     location="cashierlogin.html";
                                     alert("Invalid Crendentials");
                                  </script>';
                             }
