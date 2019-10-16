@@ -49,7 +49,7 @@ $cat=mysqli_query($conn, $query1);
                                 	echo '<optgroup label='.$catrow[0].' >';
 		                                while($row=mysqli_fetch_array($result)){
 		                                	if($row[1]==$catrow[0])
-		                            		echo '<option > '	.$row[2] .'</option>';
+		                            		echo '<option value='.$row[2].'> '	.$row[2] .'</option>';
 		                                }
 		                                echo'</optgroup>';
 		                                $result=mysqli_query($conn,$query);
