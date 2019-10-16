@@ -1,5 +1,5 @@
 
-		<?php
+<?php
 
 					$custname=filter_input(INPUT_POST, 'n');
 					$custnum=filter_input(INPUT_POST, 'no');
@@ -12,7 +12,9 @@
 					$sql="INSERT INTO customer (CNAME,CNUMBER) VALUES('$custname','$custnum')";
 
 					if($conn->query($sql)){
-						echo "New record inserted";
+						// echo "New record inserted";
+						header("Location: placeorder.html");
+   						exit;
 					}
 					else{
 						echo "record not inserted";

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2019 at 05:18 PM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.2.19
+-- Generation Time: Oct 16, 2019 at 09:23 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,6 +25,38 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bill`
+--
+
+CREATE TABLE `bill` (
+  `BID` int(11) NOT NULL,
+  `CID` int(11) DEFAULT NULL,
+  `WID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cashier`
+--
+
+CREATE TABLE `cashier` (
+  `CaID` int(11) NOT NULL,
+  `CaName` varchar(20) COLLATE utf16_bin NOT NULL,
+  `CaPass` varchar(20) COLLATE utf16_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+
+--
+-- Dumping data for table `cashier`
+--
+
+INSERT INTO `cashier` (`CaID`, `CaName`, `CaPass`) VALUES
+(1, 'Prateek', 'Mehta'),
+(2, 'Heramb', 'Kulkarni');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -39,7 +71,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`CID`, `CNAME`, `CNUMBER`) VALUES
-(1, 'akshay', '7045822217');
+(1, 'akshay', '7045822217'),
+(2, 'Aditya', '9876543211'),
+(3, 'Aditya', '9876543211'),
+(4, 'akshay', '1234'),
+(5, 'sad', '23');
 
 -- --------------------------------------------------------
 
@@ -103,11 +139,26 @@ CREATE TABLE `waiter` (
 
 INSERT INTO `waiter` (`WID`, `WNAME`, `WPASS`) VALUES
 (1, 'akshay', 'akshay'),
-(3, 'hello', 'world');
+(3, 'hello', 'world'),
+(4, 'qwerty', 'asdf');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`BID`),
+  ADD KEY `fk_cid` (`CID`),
+  ADD KEY `fk_wid` (`WID`);
+
+--
+-- Indexes for table `cashier`
+--
+ALTER TABLE `cashier`
+  ADD PRIMARY KEY (`CaID`);
 
 --
 -- Indexes for table `customer`
@@ -141,10 +192,22 @@ ALTER TABLE `waiter`
 --
 
 --
+-- AUTO_INCREMENT for table `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `BID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cashier`
+--
+ALTER TABLE `cashier`
+  MODIFY `CaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `items`
@@ -156,11 +219,18 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `waiter`
 --
 ALTER TABLE `waiter`
-  MODIFY `WID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `WID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `bill`
+--
+ALTER TABLE `bill`
+  ADD CONSTRAINT `fk_cid` FOREIGN KEY (`CID`) REFERENCES `customer` (`CID`),
+  ADD CONSTRAINT `fk_wid` FOREIGN KEY (`WID`) REFERENCES `waiter` (`WID`);
 
 --
 -- Constraints for table `orders`

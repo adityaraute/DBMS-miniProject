@@ -47,7 +47,7 @@
 			<center><h2>ORDERS</h2></CENTER>
 			<table>
       <tr>
-        <th>ORDERID</th>
+        <th>ORDER ID</th>
         <th>QUANTITY</th>
         <th>TOTAL</th>
 		<th>NAME</th>

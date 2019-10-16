@@ -6,22 +6,53 @@ $role=filter_input(INPUT_POST, 'role');
 
 if($role=="waiter"){
 
-if(!empty($name)||!empty($password)){
+		if(!empty($name)||!empty($password)){
 
-$conn=mysqli_connect("localhost","root","","restaurant");
+		$conn=mysqli_connect("localhost","root","","restaurant");
 
-$sql="INSERT INTO waiter (WNAME,WPASS) VALUES ('$name','$password')";
+		$sql="INSERT INTO waiter (WNAME,WPASS) VALUES ('$name','$password')";
 
-if($conn->query($sql)){
-	echo "New record inserted";
+		if($conn->query($sql)){
+			echo '	<script type="text/javascript">
+				alert("Record Inserted");
+				location="addmembers.html";
+				</script>';
+		}
+		else{
+			echo '	<script type="text/javascript">
+				alert("Record Not Inserted");
+				location="addmembers.html";
+				</script>';
+		}
+		$conn->close();
+		}
 }
-else{
-	echo "record not inserted";
-}
-$conn->close();
-}
-}
+if($role=="cashier"){
 
+	if(!empty($name)||!empty($password)){
+
+	$conn=mysqli_connect("localhost","root","","restaurant");
+
+	$sql="INSERT INTO cashier (CaNAME,CaPASS) VALUES ('$name','$password')";
+
+	if($conn->query($sql)){
+		
+		
+		echo '	<script type="text/javascript">
+				alert("Record Inserted");
+				location="addmembers.html";
+				</script>';
+		
+	}
+	else{
+		echo '	<script type="text/javascript">
+				alert("Record Not Inserted");
+				location="addmembers.html";
+				</script>';
+	}
+	$conn->close();
+	}
+}
 
 
 ?>
