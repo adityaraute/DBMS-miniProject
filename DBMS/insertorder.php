@@ -5,25 +5,32 @@ $tableno=$_POST['tableno'];
 $items=$_POST['items'];
 $quan=$_POST['quan'];
 
-if(!empty($tableno) && !empty($items) && !empty($quan) && !empty($price)){
+
+
+if(!empty($tableno) && !empty($items) && !empty($quan)){
                        
 
     $conn=mysqli_connect("localhost","root","","restaurant");
 
     $query1="select * from items where NAME='$items'";
     $fetchedprice=$conn->query($query1);
-    if($fetchedprice->num_rows==1){
-        while($row=mysqli_fetch_array($fetchedprice)){
-            $price=$row['PRICE'];
-        }
-    }
+   
+        $row=mysqli_fetch_array($fetchedprice);
+            $price=$row[3];
+        
+    
     $price=$price*$quan;
-
-    $sql="insert into orders(QUANTITY,TOTAL,NAME,TABLENO) values('$quan','$price','$items','$tableno')";
-    $result=$conn->query($sql);
+    
+    $sql="insert into orders(QUANTITY,TOTAL,NAME,TABLENO) values($quan,$price,'$items','$tableno')";
+    
 
     if($conn->query($sql)){
-        header("Location: placeorder.php");
+        echo '
+        <script type ="text/javascript">
+        location="placeorder.php";
+       alert("Order Placed ");
+    </script>';
+        
     }
     else{
         echo '
