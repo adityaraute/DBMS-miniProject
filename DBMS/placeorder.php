@@ -32,13 +32,13 @@ $cat=mysqli_query($conn, $query1);
 		
 		<div class="container" style="min-height:100vh">
 			<section class=" login " style="margin:auto">
-				<form method="post" action=""> 
+				<form method="post" action="insertorder.php"> 
                     <!-- Has to be added -->
                     <fieldset style="height:auto; width: 25vw; ">
                         <legend>Place Order</legend>
 
                         <label for = "number">Table</label><br>
-                        <input type="number" id="table" name="table" style="background: transparent;"><br>
+                        <input type="number" id="table" name="tableno" style="background: transparent;"><br>
 
                         <label for="items">Items</label>
                         <select name="items" id="items"  style="background: transparent;">
@@ -49,7 +49,7 @@ $cat=mysqli_query($conn, $query1);
                                 	echo '<optgroup label='.$catrow[0].' >';
 		                                while($row=mysqli_fetch_array($result)){
 		                                	if($row[1]==$catrow[0])
-		                            		echo '<option > '	.$row[2] .'</option>';
+		                            		echo '<option value=".$row[2]."> '	.$row[2] .'</option>';
 		                                }
 		                                echo'</optgroup>';
 		                                $result=mysqli_query($conn,$query);
@@ -65,7 +65,7 @@ $cat=mysqli_query($conn, $query1);
                         
                         <label for = "number">Quantity</label><br>
                         <input type="number" id="price" name="quan"  style="background: transparent;"><br>
-
+						
                         
 
                         <input type="submit" value="Submit" id="submit">
