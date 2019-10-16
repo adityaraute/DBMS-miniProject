@@ -13,7 +13,8 @@
 			margin-top: 5rem;
 			border-collapse: collapse;
 			width: 80%;
-			
+		display:block;
+		margin:5rem 35%;
 			}
 
 		table td, table th {
@@ -52,13 +53,14 @@
 				<h1>RESTAURANT MANAGEMENT SYSTEM</h1><br>
 				<p>GENERATE BILL</p><br>
 					
-					<form method="post" action="">
+					<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <label for="number"> Table No. </label><br>
-						<input type="number"  id="number" name="number"><br>
-						<a href="#"><button>Generate Bill</button></a>
+						<input type="number"  id="number" name="num"><br>
+						<input type="submit" value="Generate Bill" name="submit">
                 </form>
-				<br>
-				<table>
+				</section>
+				<center>
+		<table>
 				<tr>
 					<th>ORDER ID</th>
 					<th>QUANTITY</th>
@@ -66,17 +68,41 @@
 					<th>NAME</th>
 					<TH>TABLE</TH>
 				</tr>
-				<tr>
-					<td>3</td>
-					<td>1</td>
-					<td>30</td>
-					<td>Balls</td>
-					<td></td>
-				</tr>
+				<?php
+if(isset($_POST['submit']))
+
+{
+	 $sum=0;
+			$tno=$_POST['num'];
+      		$conn= mysqli_connect("localhost","root","","restaurant");
+      
+      $sql= "SELECT * FROM orders where TABLENO=".$tno."";
+      $result=$conn->query($sql);
+
+     
+		  
+      while($row=$result->fetch_assoc()){
+      echo "<tr><td>".$row["ORDERID"]."</td><td>".$row["QUANTITY"]."</td><td>".$row["TOTAL"]."</td><td>".$row["NAME"]."</td><td>".$row["TABLENO"]."</td></tr>";
+	$sum=$sum+$row['TOTAL'];
+	}
+
+	$addtobill = "INSERT INTO bill (TOTAL,TABLENO) VALUES($sum,'$tno')";
+	$added = $conn->query($addtobill);
+
+	$delq ="Delete from orders where TABLENO = '$tno'";
+	$deled = $conn->query($delq);
+
+		echo "<h4 style='margin:10px;'> Rs.".$sum."</h4>";
+		$conn->close();
+	
+	}
+	
+	?>
+      
 		</table>
 
-					
-			</section>
+				
+		</center>
 
 					
 		</div>
