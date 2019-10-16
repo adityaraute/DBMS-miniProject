@@ -40,8 +40,8 @@ $cat=mysqli_query($conn, $query1);
                         <label for = "number">Table</label><br>
                         <input type="number" id="table" name="table" style="background: transparent;"><br>
 
-                        <label for="category">Category</label>
-                        <select name="category" id="category"  style="background: transparent;">
+                        <label for="items">Items</label>
+                        <select name="items" id="items"  style="background: transparent;">
                                 <?php 
 
                                 while($catrow=mysqli_fetch_array($cat)){
@@ -60,17 +60,7 @@ $cat=mysqli_query($conn, $query1);
                         <br>
 
                         
-                        <label for="items">Items</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select name="items" id="items"  style="background: transparent;">
-                                
-                                	
-                                	<option value="Idli">Idli</option>
-                                	<option value="Idli">Idli</option>
-                               
-                                
-                                <!-- Also Dynamic -->
-                        
-                        </select><br>
+                      
                         
                         
                         <label for = "number">Quantity</label><br>
