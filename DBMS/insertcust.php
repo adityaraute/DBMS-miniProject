@@ -13,7 +13,7 @@
 
 					if($conn->query($sql)){
 						// echo "New record inserted";
-						header("Location: placeorder.html");
+						header("Location: placeorder.php");
    						exit;
 					}
 					else{
