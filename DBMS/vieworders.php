@@ -59,17 +59,19 @@
 
       $conn= mysqli_connect("localhost","root","","restaurant");
       
-      $sql= "SELECT ORDERID,QUANTITY,TOTAL,NAME,CID FROM orders";
+      $sql= "SELECT * FROM orders";
       $result=$conn->query($sql);
 
-      if($result->num_rows>0){
-      while($row=$result-> fetch_assoc()){
+      if(mysqli_num_rows($result)>0){
+     		while($row=$result-> fetch_assoc()){
 
-      echo "<tr><td>".$row["ORDERID"]."</td><td>".$row["QUANTITY"]."</td><td>".$row["TOTAL"]."</td><td>".$row["NAME"]."</td><td>".$row["CID"]."</td></tr>";
+     		 echo "<tr><td>".$row["ORDERID"]."</td><td>".$row["QUANTITY"]."</td><td>".$row["TOTAL"]."</td><td>".$row["NAME"]."</td><td>".$row["TABLENO"]."</td></tr>";
+		}}
+		else{
+			echo "";
 		}
-
 	echo "</table>";
-		}
+		
 		$conn->close();
 		
 		?>
