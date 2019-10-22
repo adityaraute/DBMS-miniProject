@@ -74,15 +74,16 @@ if(isset($_POST['submit']))
 {
 	 $sum=0;
 			$tno=$_POST['num'];
-      		$conn= mysqli_connect("localhost","root","","restaurant");
-    echo typeof($tno);
-      $sql= "SELECT * FROM BILL where DATE=".STR_TO_DATE('$tno','%y-%m-%d')."";
+			  $conn= mysqli_connect("localhost","root","","restaurant");
+			echo ($tno);
+    
+      $sql= "SELECT * FROM BILL where BILLDATE=DATE_FORMAT('$tno','%Y-%m-%d')";
       $result=$conn->query($sql);
-
+	 
      
 		  
-      while($row=$result->fetch_assoc()){
-      echo "<tr><td>".$row["BID"]."</td><td>".$row["TOTAL"]."</td><td>".$row["TABLENO"]."</td><td>".$row["DATE"]."</td></tr>";
+      while($row=mysqli_fetch_array($result)){
+      echo "<tr><td>".$row["BID"]."</td><td>".$row["TOTAL"]."</td><td>".$row["TABLENO"]."</td><td>".$row["BILLDATE"]."</td></tr>";
 	$sum=$sum+$row['TOTAL'];
 	}
 
